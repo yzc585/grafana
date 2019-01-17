@@ -32,8 +32,9 @@ export class Settings {
   disableUserSignUp: boolean;
   loginHint: any;
   loginError: any;
+  sanitizeInput: boolean;
 
-  constructor(options) {
+  constructor(options: Settings) {
     const defaults = {
       datasources: {},
       windowTitlePrefix: 'Grafana - ',
@@ -48,6 +49,7 @@ export class Settings {
         env: 'production',
         isEnterprise: false,
       },
+      sanitizeInput: true
     };
 
     _.extend(this, defaults, options);
